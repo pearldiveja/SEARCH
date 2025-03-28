@@ -8,8 +8,16 @@
 </head>
 <body>
     <div class="container">
-        <div class="search-section">
+        <!-- Header Section -->
+        <header class="header">
             <h1 class="title">Research Item Values</h1>
+            <div class="dark-mode-toggle">
+                <button id="toggleDarkMode">Enable Dark Mode</button>
+            </div>
+        </header>
+
+        <!-- Search Section -->
+        <div class="search-section">
             <div class="search-bar">
                 <input type="text" id="searchInput" placeholder="Search for items...">
                 <button id="searchButton">Search</button>
@@ -17,13 +25,34 @@
                 <label for="imageUpload" class="upload-button">Upload Image</label>
             </div>
         </div>
+
+        <!-- Tabs Section -->
         <div class="tabs">
             <button class="tab active" id="sorterTab">Sorter</button>
             <button class="tab" id="ecomTab">ECOMM</button>
         </div>
-        <div class="results">
+
+        <!-- Recent Searches Feed -->
+        <section class="recent-searches">
+            <h2>Recent Activity</h2>
+            <div class="feed">
+                <div class="row">
+                    <h3>Items Sent to ECOMM</h3>
+                    <div id="ecommItems" class="feed-row"></div>
+                </div>
+                <div class="row">
+                    <h3>Items Listed Online</h3>
+                    <div id="listedItems" class="feed-row"></div>
+                </div>
+                <button id="viewRejectedButton">View Recent Rejected Items</button>
+                <div id="rejectedItems" class="feed-row hidden"></div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results">
             <!-- Search results will be displayed here -->
-        </div>
+        </section>
     </div>
 
     <script src="script.js"></script>
