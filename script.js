@@ -1,81 +1,96 @@
-// script.js
-const searchInput = document.getElementById('searchInput');
-const searchButton = document.getElementById('searchButton');
-const imageUpload = document.getElementById('imageUpload');
-const sorterTab = document.getElementById('sorterTab');
-const ecomTab = document.getElementById('ecomTab');
-const resultsDiv = document.querySelector('.results');
-
-// Function to handle search
-function handleSearch(query) {
-    // Use Perplexity API to fetch data
-    fetch(`https://api.perplexity.ai/search?q=${query}`)
-        .then(response => response.json())
-        .then(data => {
-            // Display search results
-            displayResults(data);
-        })
-        .catch(error => console.error('Error:', error));
+/* style.css */
+:root {
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --accent-color: #007bff;
+    --button-hover: #0056b3;
 }
 
-// Function to handle image upload
-function handleImageUpload(event) {
-    const file = event.target.files[0];
-    const reader = new FileReader();
-    reader.onload = () => {
-        const imageData = reader.result;
-        // Use Perplexity API to search by image
-        fetch('https://api.perplexity.ai/search/image', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ image: imageData })
-        })
-            .then(response => response.json())
-            .then(data => {
-                // Display search results
-                displayResults(data);
-            })
-            .catch(error => console.error('Error:', error));
-    };
-    reader.readAsDataURL(file);
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
-// Function to display search results
-function displayResults(data) {
-    resultsDiv.innerHTML = '';
-    data.forEach(item => {
-        const resultItem = document.createElement('div');
-        resultItem.classList.add('result-item');
-        const itemImage = document.createElement('img');
-        itemImage.src = item.image;
-        resultItem.appendChild(itemImage);
-        const itemInfo = document.createElement('p');
-        itemInfo.textContent = item.name + ' - ' + item.price;
-        resultItem.appendChild(itemInfo);
-        resultsDiv.appendChild(resultItem);
-    });
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
-// Event listeners
-searchButton.addEventListener('click', () => {
-    const query = searchInput.value.trim();
-    if (query) {
-        handleSearch(query);
-    }
-});
+.search-section {
+    text-align: center;
+}
 
-imageUpload.addEventListener('change', handleImageUpload);
+.title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
 
-sorterTab.addEventListener('click', () => {
-    sorterTab.classList.add('active');
-    ecomTab.classList.remove('active');
-    // Update results based on sorter tab
-});
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-ecomTab.addEventListener('click', () => {
-    ecomTab.classList.add('active');
-    sorterTab.classList.remove('active');
-    // Update results based on ecom tab
-});
+.search-bar input[type="text"] {
+    width: 300px;
+    height: 40px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+}
+
+.search-bar button {
+    height: 40px;
+    padding: 0 20px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: var(--button-hover);
+}
+
+.upload-button {
+    margin-left: 10px;
+    height: 40px;
+    padding: 0 15px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.upload-button:hover {
+    background-color: var(--button-hover);
+}
+
+.tabs {
+    margin-top: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #333333;
+    color: var(--text-color);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tab.active {
+    background-color: var(--accent-color);
+}
+
+.results {
+    margin-top: 30px;
+}
