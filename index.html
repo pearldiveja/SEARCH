@@ -1,60 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Item Value Researcher</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Item Value Researcher</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Header Section -->
-        <header class="header">
-            <h1 class="title">Research Item Values</h1>
-            <div class="dark-mode-toggle">
-                <button id="toggleDarkMode">Enable Dark Mode</button>
-            </div>
-        </header>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1 class="title">Research Item Values</h1>
+      <button id="toggleDarkMode" class="dark-mode-button">Enable Dark Mode</button>
+    </header>
 
-        <!-- Search Section -->
-        <div class="search-section">
-            <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Search for items...">
-                <button id="searchButton">Search</button>
-                <input type="file" id="imageUpload" accept="image/*" hidden>
-                <label for="imageUpload" class="upload-button">Upload Image</label>
-            </div>
+    <!-- Search Section -->
+    <section class="search-section">
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search for items...">
+        <button id="searchButton">Search</button>
+        <input type="file" id="imageUpload" accept="image/*" hidden>
+        <label for="imageUpload" class="upload-button">Upload Image</label>
+      </div>
+      <div class="tabs">
+        <button class="tab active" id="sorterTab">Sorter</button>
+        <button class="tab" id="ecomTab">ECOMM</button>
+      </div>
+    </section>
+
+    <!-- Recent Activity Feed -->
+    <section class="recent-activity">
+      <h2>Recent Activity</h2>
+      <div class="feed">
+        <!-- Items Sent to ECOMM -->
+        <div class="row">
+          <h3>Items Sent to ECOMM</h3>
+          <div id="ecommItems" class="feed-row"></div>
         </div>
 
-        <!-- Tabs Section -->
-        <div class="tabs">
-            <button class="tab active" id="sorterTab">Sorter</button>
-            <button class="tab" id="ecomTab">ECOMM</button>
+        <!-- Items Listed Online -->
+        <div class="row">
+          <h3>Items Listed Online</h3>
+          <div id="listedItems" class="feed-row"></div>
         </div>
 
-        <!-- Recent Searches Feed -->
-        <section class="recent-searches">
-            <h2>Recent Activity</h2>
-            <div class="feed">
-                <div class="row">
-                    <h3>Items Sent to ECOMM</h3>
-                    <div id="ecommItems" class="feed-row"></div>
-                </div>
-                <div class="row">
-                    <h3>Items Listed Online</h3>
-                    <div id="listedItems" class="feed-row"></div>
-                </div>
-                <button id="viewRejectedButton">View Recent Rejected Items</button>
-                <div id="rejectedItems" class="feed-row hidden"></div>
-            </div>
-        </section>
+        <!-- View Rejected Items Button -->
+        <button id="viewRejectedButton">View Recent Rejected Items</button>
+        <div id="rejectedItems" class="feed-row hidden"></div>
+      </div>
+    </section>
 
-        <!-- Results Section -->
-        <section class="results">
-            <!-- Search results will be displayed here -->
-        </section>
-    </div>
+    <!-- Search Results Section -->
+    <section class="results">
+      <!-- Search results will be displayed dynamically here -->
+    </section>
+  </div>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
