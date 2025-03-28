@@ -8,17 +8,21 @@
 </head>
 <body>
     <div class="container">
-        <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Search for items...">
-            <button id="searchButton">Search</button>
-            <input type="file" id="imageUpload" accept="image/*">
+        <div class="search-section">
+            <h1 class="title">Research Item Values</h1>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search for items...">
+                <button id="searchButton">Search</button>
+                <input type="file" id="imageUpload" accept="image/*" hidden>
+                <label for="imageUpload" class="upload-button">Upload Image</label>
+            </div>
         </div>
         <div class="tabs">
             <button class="tab active" id="sorterTab">Sorter</button>
             <button class="tab" id="ecomTab">ECOMM</button>
         </div>
         <div class="results">
-            <!-- Display search results here -->
+            <!-- Search results will be displayed here -->
         </div>
     </div>
 
