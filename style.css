@@ -5,7 +5,6 @@
   --text-color-light: #000000;
   --text-color-dark: #ffffff;
   --accent-color: #007bff;
-  --button-hover: #0056b3;
 }
 
 body {
@@ -20,7 +19,6 @@ body {
 .container {
   max-width: 1200px;
   margin: auto;
-  padding: 20px;
 }
 
 .header {
@@ -29,20 +27,6 @@ body {
 
 .title {
   font-size: 2.5rem;
-}
-
-.dark-mode-button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: var(--accent-color);
-  color: var(--text-color-light);
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-}
-
-.dark-mode-button:hover {
-  background-color: var(--button-hover);
 }
 
 .search-section {
@@ -56,8 +40,4 @@ body {
 }
 
 .search-bar input[type='text'] {
-  width: calc(100% - 140px);
-}
-
-.feed-row img {
 }
