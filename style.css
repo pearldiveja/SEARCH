@@ -1,43 +1,17 @@
-/* style.css */
-:root {
-  --background-color-light: #ffffff;
-  --background-color-dark: #121212;
-  --text-color-light: #000000;
-  --text-color-dark: #ffffff;
-  --accent-color: #007bff;
-}
+// script.js
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Inter', Arial, sans-serif;
-  background-color: var(--background-color-light);
-  color: var(--text-color-light);
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
+// DOM Elements
+const searchInput = document.getElementById("searchInput");
+const searchButton = document.getElementById("searchButton");
+const imageUpload = document.getElementById("imageUpload");
+const sorterTab = document.getElementById("sorterTab");
+const ecomTab = document.getElementById("ecomTab");
+const toggleDarkMode = document.getElementById("toggleDarkMode");
+const carousel = document.getElementById("carousel");
 
-.container {
-  max-width: 1200px;
-  margin: auto;
-}
+// Dark Mode State
+let darkModeEnabled = false;
 
-.header {
-  text-align: center;
-}
-
-.title {
-  font-size: 2.5rem;
-}
-
-.search-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.search-bar {
-  display: flex;
-}
-
-.search-bar input[type='text'] {
+// Function to toggle dark mode
+function toggleDarkModeHandler() {
 }
