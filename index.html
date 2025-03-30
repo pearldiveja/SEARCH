@@ -11,7 +11,6 @@
     <!-- Header -->
     <header class="header">
       <h1 class="title">Research Item Values</h1>
-      <button id="toggleDarkMode" class="dark-mode-button">Enable Dark Mode</button>
     </header>
 
     <!-- Search Section -->
@@ -28,32 +27,20 @@
       </div>
     </section>
 
-    <!-- Recent Activity Feed -->
-    <section class="recent-activity">
+    <!-- Recent Activity Carousel -->
+    <section class="carousel-section">
       <h2>Recent Activity</h2>
-      <div class="feed">
-        <!-- Items Sent to ECOMM -->
-        <div class="row">
-          <h3>Items Sent to ECOMM</h3>
-          <div id="ecommItems" class="feed-row"></div>
+      <div class="carousel-container">
+        <div id="carousel" class="carousel">
+          <!-- Carousel items will be dynamically populated -->
         </div>
-
-        <!-- Items Listed Online -->
-        <div class="row">
-          <h3>Items Listed Online</h3>
-          <div id="listedItems" class="feed-row"></div>
-        </div>
-
-        <!-- View Rejected Items Button -->
-        <button id="viewRejectedButton">View Recent Rejected Items</button>
-        <div id="rejectedItems" class="feed-row hidden"></div>
       </div>
     </section>
 
-    <!-- Search Results Section -->
-    <section class="results">
-      <!-- Search results will be displayed dynamically here -->
-    </section>
+    <!-- Dark Mode Button -->
+    <footer class="footer">
+      <button id="toggleDarkMode" class="dark-mode-button">Enable Dark Mode</button>
+    </footer>
   </div>
 
   <script src="script.js"></script>
